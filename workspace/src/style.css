@@ -1,11 +1,24 @@
+/* [개발 > 서비스/웹] ClueMap 디자인 토큰 — 웜 아이보리 바탕, 순백 카드, 옅은 웜그레이 테두리 */
 @import "tailwindcss";
 
 @theme {
-  --font-sans: Inter, "Malgun Gothic", sans-serif;
+  --font-sans: Pretendard, "Pretendard Variable", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+
+  --color-ivory: #FAF9F6;   /* 페이지 바탕 */
+  --color-memo: #F8F7F4;    /* 메모·보조 면 */
+  --color-line: #E8E5DF;    /* 테두리 */
+  --color-ink: #1E293B;     /* 본문 딥 네이비 */
+  --color-muted: #6B6760;   /* 보조 글자 (웜그레이) */
+  --color-sage: #059669;    /* 완료·연결됨 */
+  --color-mint: #ECFDF5;    /* 완료 배경 */
+  --color-coral: #E11D48;   /* 주의·출처 없음 */
+  --color-blush: #FFF1F2;   /* 주의 배경 */
 }
 
 @layer base {
-  body { @apply bg-slate-100 text-slate-900 antialiased; }
-  :is(button, select, a):focus-visible { @apply outline-2 outline-offset-2 outline-blue-600; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-ivory text-ink antialiased; word-break: keep-all; overflow-wrap: break-word; }
+  :is(button, textarea, a, input):focus-visible { @apply outline-2 outline-offset-2 outline-ink; }
   button:enabled { @apply cursor-pointer; }
+  button:disabled { @apply cursor-not-allowed; }
 }

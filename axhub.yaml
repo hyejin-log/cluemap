@@ -1,7 +1,7 @@
 version: axhub/v1
-name: rebate-lens
+name: cluemap
 metadata:
-  name: "Rebate Lens · 판매장려금 검토"
+  name: "ClueMap · 현업 기준 추출 & 서류 빈칸 연결 보드"
 runtime:
   port: 8080
   health_path: /healthz
@@ -10,5 +10,3 @@ build:
   deploy_method: docker
   install: pip install -r requirements.txt
   start: python -m uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8080}
-database:
-  engine: postgres
