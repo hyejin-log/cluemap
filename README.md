@@ -47,7 +47,11 @@ python -m pytest
 
 ## 배포
 
-`Dockerfile`이 작업 화면을 빌드(테스트 포함)한 뒤 FastAPI로 서빙해요. `axhub.yaml`의 상태 확인 경로는 `/healthz`예요.
+`Dockerfile`이 작업 화면을 빌드(테스트 포함)한 뒤 FastAPI로 서빙해요. 상태 확인 경로는 `/healthz`예요.
+
+- **Render**: `render.yaml`(Blueprint)로 배포해요. `main` 브랜치에 push 하면 자동으로 다시 배포돼요.
+  무료 플랜은 15분 동안 접속이 없으면 잠들고, 다음 접속 때 깨어나느라 첫 화면이 30초~1분 늦게 뜰 수 있어요.
+- `axhub.yaml`은 axhub에 올릴 때 쓰는 설정이에요(현재는 사용하지 않음).
 
 ## 브랜치
 

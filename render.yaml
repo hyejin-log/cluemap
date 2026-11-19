@@ -1,0 +1,10 @@
+# [배포] Render Blueprint — main 브랜치에 push 하면 Dockerfile 로 빌드해 자동 배포해요.
+services:
+  - type: web
+    name: cluemap
+    runtime: docker
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /healthz
+    autoDeploy: true
