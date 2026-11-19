@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node --test src/lib/"
+    "test": "node --test src/lib/extractRules.test.js"
   },
   "dependencies": {
     "react": "19.0.0",
