@@ -16,7 +16,7 @@
 | 요약 바 | 뽑아낸 규칙 · 출처 없는 빈칸 · 용어 차이 · 표준화 완료율 | `workspace/src/components/SummaryBar.jsx` |
 | ① 규칙 뽑기 | 인터뷰 메모 → ‘만약 → 이렇게 처리’ 규칙 카드 → 확정하기 | `workspace/src/components/RuleExtractor.jsx` |
 | ② 빈칸 출처 잇기 | 원본 자료 ──상태──▶ 서류 빈칸 가로 행, 출처 없는 행은 눌러서 질문 확인 | `workspace/src/components/SourceMap.jsx` |
-| ③ 용어 맞추기 | 부서별 뜻 중 대표 뜻을 골라 회사 표준으로 확정 | `workspace/src/components/TermAligner.jsx` |
+| ③ 용어 맞추기 | 같은 단어를 부서마다 다른 단계에 쓰는 경우, 하나만 고르지 않고 일의 순서대로 단계 이름을 나눠 확정 (예: 계약 확정 → 견적 확정 → 서명 확정 → 입금 확정) | `workspace/src/components/TermAligner.jsx` |
 
 - 예시 데이터: `workspace/src/data/scenarios.js`
 - 규칙 추출기(브라우저 안에서만 동작, 외부 전송 없음): `workspace/src/lib/extractRules.js`

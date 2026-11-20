@@ -8,6 +8,8 @@
 //     · from 이 null 이면 출처가 없는 빈칸 → 질문(question)과 답을 받은 뒤의 출처(answeredFrom)를 둬요
 // - autoLinked: 이미 출처가 확인된 기본 빈칸 (화면에서는 한 줄로 접어서 보여줘요)
 // - terms: 부서마다 다르게 쓰는 단어와 부서별 뜻
+//     · meanings 는 일이 진행되는 순서대로 적고, stage 는 그 단계에 붙일 추천 이름이에요
+//     · 하나만 고르지 않고, 단어 하나를 단계별 이름으로 나눠 모든 부서의 뜻을 살려요
 
 export const scenarios = [
   {
@@ -50,17 +52,17 @@ export const scenarios = [
         id: 't1',
         word: '계약 확정',
         meanings: [
-          { team: '영업팀', meaning: '견적 합의 완료' },
-          { team: '재무팀', meaning: '입금 확인 완료' },
-          { team: '법무팀', meaning: '최종 서명 완료' },
+          { team: '영업팀', meaning: '견적 합의 완료', stage: '견적 확정' },
+          { team: '법무팀', meaning: '최종 서명 완료', stage: '서명 확정' },
+          { team: '재무팀', meaning: '입금 확인 완료', stage: '입금 확정' },
         ],
       },
       {
         id: 't2',
         word: '검수 완료',
         meanings: [
-          { team: '현장팀', meaning: '납품 수령' },
-          { team: '정산팀', meaning: '세금계산서 발행' },
+          { team: '현장팀', meaning: '납품 수령', stage: '현장 검수' },
+          { team: '정산팀', meaning: '세금계산서 발행', stage: '정산 검수' },
         ],
       },
     ],
@@ -106,17 +108,17 @@ export const scenarios = [
         id: 'u1',
         word: '검수 완료',
         meanings: [
-          { team: '현장팀', meaning: '납품 수령 사인' },
-          { team: '정산팀', meaning: '세금계산서 접수' },
+          { team: '현장팀', meaning: '납품 수령 사인', stage: '현장 검수' },
+          { team: '정산팀', meaning: '세금계산서 접수', stage: '서류 검수' },
         ],
       },
       {
         id: 'u2',
         word: '정산 마감',
         meanings: [
-          { team: '정산팀', meaning: '매월 25일 서류 마감' },
-          { team: '현장팀', meaning: '작업 종료일' },
-          { team: '재무팀', meaning: '대금 지급 완료' },
+          { team: '현장팀', meaning: '작업 종료일', stage: '작업 마감' },
+          { team: '정산팀', meaning: '매월 25일 서류 마감', stage: '서류 마감' },
+          { team: '재무팀', meaning: '대금 지급 완료', stage: '지급 완료' },
         ],
       },
     ],
