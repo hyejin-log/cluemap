@@ -76,7 +76,7 @@ function App() {
           onAnswer={(id) => update((current) => ({ answered: [...new Set([...current.answered, id])] }))}
           onUndo={(id) => update((current) => ({ answered: current.answered.filter((item) => item !== id) }))} />
         <TermAligner terms={scenario.terms} standardized={state.standardized}
-          onConfirm={(id, team) => update((current) => ({ standardized: { ...current.standardized, [id]: team } }))}
+          onConfirm={(id, stages) => update((current) => ({ standardized: { ...current.standardized, [id]: stages } }))}
           onUndo={(id) => update((current) => {
             const { [id]: _removed, ...rest } = current.standardized;
             return { standardized: rest };
